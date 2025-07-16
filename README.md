@@ -1,8 +1,28 @@
+Churn Prediction in Banking Using Neural Networks
+Overview
+This project aims to predict whether bank customers will leave the service provider within the next six months. Churn prediction is crucial for businesses like banks to understand customer behavior and improve service quality to retain customers. The project utilizes neural network-based classifiers to achieve this objective.
 
-# 🏦 Bank Customer Data - Exploratory Data Analysis (EDA)
+Problem Statement
+Businesses like banks face the challenge of customer churn, where customers leave for alternative service providers. Understanding the factors influencing customer churn is essential for targeted improvement efforts. The objective is to build a neural network-based classifier that predicts whether a bank customer will leave within the next six months.
 
-This repository contains an exploratory data analysis (EDA) notebook that analyzes a banking dataset. The goal is to understand customer behavior and trends to inform decision-making for targeted services such as marketing campaigns, product offerings, and customer retention strategies.
+Data Description
+The dataset, taken from Kaggle, contains 10,000 sample points with 14 distinct features. These are:
 
+Number	Attribute	Description
+1.	CustomerId	Unique ID assigned to each customer.
+2.	Surname	Last name of the customer.
+3.	CreditScore	Defines the credit history of the customer.
+4.	Geography	Customer's location.
+5.	Gender	Gender of the customer.
+6.	Age	Age of the customer.
+7.	Tenure	Number of years for which the customer has been with the bank.
+8.	NumOfProducts	Number of products that a customer has purchased through the bank.
+9.	Balance	Account balance.
+10.	HasCrCard	Categorical variable indicating whether the customer has a credit card (1 for yes, 0 for no).
+11.	EstimatedSalary	Estimated salary of the customer.
+12.	IsActiveMember	Categorical variable indicating whether the customer is an active member of the bank (1 for yes, 0 for no).
+13.	Exited	Categorical variable indicating whether the customer left the bank within six months (1 for yes, 0 for no).
+14.	
 
 Churn Modelling - How to predict if a bank’s customer will stay or leave the bank
 Using a source of 10,000 bank records, we created an app to demonstrate the ability to apply machine learning models to predict the likelihood of customer churn. We accomplished this using the following steps:
@@ -92,6 +112,38 @@ This project focuses on building industry-level machine learning models to predi
 
 ---
 
+Model Evaluation Criterion
+Recall is prioritized, especially when the cost of false negatives is high. In customer churn prediction, reducing false negatives is crucial as it minimizes missed opportunities to retain customers by providing incentives to prevent them from leaving.
+
+Models
+SGD Optimizer: Uses Stochastic Gradient Descent (SGD) to update model weights in small batches, aiming for gradual loss function minimization.
+
+Adam Optimizer: Utilizes Adam optimizer, adapting learning rates for each parameter, leading to faster convergence and improved performance, especially on large datasets.
+
+Adam Optimizer with Dropout (Dropout rate: 0.2): Incorporates dropout regularization, randomly removing 20% of neurons during training to prevent overfitting by reducing dependency on specific neurons.
+
+Adam Optimizer with Hyperparameter Tuning: Employs grid search to find the best hyperparameter combination (batch size and learning rate) for optimizing model performance.
+
+Balanced Data with SMOTE and Adam Optimizer (Oversampling): Addresses class imbalance by oversampling the minority class using SMOTE in combination with Adam optimizer during training, enhancing the model's ability to learn from minority class instances.
+
+Balanced Data with SMOTE and Adam Optimizer (Oversampling)
+Metric	Accuracy	Precision	Recall	F1 Score	AUC Score
+Score	0.73625	0.413978	0.708589	0.522624	0.87
+Final Model
+After evaluating all considered models, we determined that the model incorporating the Adam optimizer and dropout rate of 0.2 (Model 3) exhibited the highest recall value. In the context of our specific problem statement, where correctly identifying customers likely to leave is crucial, recall serves as an important metric. Therefore, we select Model 3 as our final model for predicting values on the test set.
+
+Metric	Score
+Accuracy	0.73625
+Precision	0.413978
+Recall	0.708589
+F1 Score	0.522624
+AUC	0.83
+Accuracy (0.73625): The model correctly predicted the customer churn for about 73.625% of the customers in the test set.
+Precision (0.413978): When the model predicts a customer will churn, it is correct about 41.3978% of the time. The model may be overestimating customer churn, leading to unnecessary retention efforts.
+Recall (0.708589): The model correctly identified 70.8589% of the customers who actually churned. This is crucial to identify as many churning customers as possible.
+F1 Score (0.522624): An F1 score of 52.2624% indicates that there is room for improvement in achieving a better balance.
+AUC (0.83): An AUC score of 0.83 on the test set indicates relatively good performance of the model in distinguishing between positive and negative instances. Therefore, the model has a high probability of ranking a randomly chosen positive instance higher than a randomly chosen negative instance.
+
 ## 🛠️ Technologies Used
 
 - Python
@@ -112,6 +164,18 @@ This project focuses on building industry-level machine learning models to predi
 
 ---
 
+nsights and Recommendations
+Engagement of Dormant Members
+The bank may consider launching a campaign to re-engage dormant members and convert them into active clients. This could involve reaching out to them with exclusive deals, incentives, or personalized financial guidance to help them make the most out of their accounts.
+
+Product Retention and Diversification
+Encouraging customers to diversify their product holdings could be beneficial, especially considering that a significant proportion (51%) of customers only own one product. Implementing retention strategies to retain clients with multiple products, such as offering incentives or bundled services, could be effective.
+
+Services Tailored to Age
+Given the positive correlation between leaving a bank and age, the bank should consider offering age-specific services or incentives to retain customers across different age groups. Customizing services to cater to various life stages could enhance client retention.
+
+Retention Strategies Based on Tenure
+Customers with shorter tenures, specifically one year and zero years, exhibit higher rates of churn. Implementing promotions, personalized services, or onboarding programs targeted at acquiring and retaining customers during the early years of their banking relationship could mitigate churn.
 
 
 
