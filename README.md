@@ -104,16 +104,17 @@ Banks face the challenge of customer churn, where customers leave for alternativ
 
 ---
 
-## 🔮 Evaluation Metrics
+### 📊 Model Performance Summary (Threshold tuned for ~75% Recall)
 
-| Model                     | Precision | Recall | F1 Score | Accuracy | AUC    |
-| ------------------------- | --------- | ------ | -------- | -------- | ------ |
-| Decision Tree             | 0.4974    | 0.6953 | 0.5799   | 0.7950   | 0.8426 |
-| K-Nearest Neighbors       | 0.4512    | 0.6241 | 0.5237   | 0.7690   | 0.8020 |
-| Logistic Regression       | 0.5130    | 0.6781 | 0.5841   | 0.8035   | 0.8382 |
-| Random Forest             | 0.6250    | 0.6143 | 0.6196   | 0.8465   | 0.8618 |
-| XGBoost                   | 0.6028    | 0.6339 | 0.6180   | 0.8405   | 0.8639 |
-| Support Vector Classifier | 0.5948    | 0.6241 | 0.6091   | 0.8370   | 0.8551 |
+| Model                     | Precision | Recall   | F1 Score (Macro) | Accuracy | ROC AUC |
+|---------------------------|-----------|----------|------------------|----------|---------|
+| Decision Tree             | 0.4303    | 0.7740   | 0.5531           | 0.7455   | 0.8385  |
+| K-Nearest Neighbors       | 0.4039    | 0.7592   | 0.5273           | 0.7230   | 0.8145  |
+| Logistic Regression       | 0.4402    | 0.7690   | 0.5599           | 0.7540   | 0.8377  |
+| Random Forest             | 0.4952    | 0.7592   | 0.5994           | 0.7935   | 0.8579  |
+| XGBoost                   | 0.5058    | 0.7518   | 0.6047           | 0.8000   | 0.8639  |
+| Support Vector Classifier | 0.4565    | 0.7740   | 0.5743           | 0.7665   | 0.8590  |
+
 
 ---
 
