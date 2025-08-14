@@ -122,13 +122,13 @@ Banks face the challenge of customer churn, where customers leave for alternativ
 
 * **Optimizer**: Adam
 * **Dropout**: 0.2
-* **Best Metric**: Recall = **0.7085** (highest among all models)
+* **Best Metric**: Recall = **0.76 85** (highest among all models)
 
 | Metric    | Score  |
 | --------- | ------ |
-| Accuracy  | 0.7363 |
-| Precision | 0.4140 |
-| Recall    | 0.7086 |
+| Accuracy  | 0.7191 |
+| Precision | 0.4040 |
+| Recall    | 0.7686 |
 | F1 Score  | 0.5226 |
 | AUC       | 0.83   |
 
